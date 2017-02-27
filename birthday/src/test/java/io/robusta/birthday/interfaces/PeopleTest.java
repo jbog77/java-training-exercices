@@ -26,10 +26,12 @@ public class PeopleTest {
         People jane = new People();
         jane.setBirthday(200);
         assertTrue(jane.equals(jo));
+        System.out.println(jane.equals(jo));
         
         People jack = new People();
         jack.setBirthday(300);
         assertFalse(jo.equals(jack));
+        System.out.println(jo.equals(jack));
 
 
     }
