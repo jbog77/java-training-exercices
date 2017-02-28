@@ -21,8 +21,13 @@ public class Deck extends LinkedList<Card> implements IDeck{
 	@Override
 	public Card pick() {
 		// shuffle;
+		Collections.shuffle(this);
+		
 		// remove card from deck and returns it
-		return null;
+		Card card = this.get(0);
+		this.remove(0);
+		
+		return card;
 	}
 
 
