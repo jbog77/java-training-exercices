@@ -26,7 +26,6 @@ public class Deck extends LinkedList<Card> implements IDeck{
 		// remove card from deck and returns it
 		Card card = this.get(0);
 		this.remove(0);
-		
 		return card;
 	}
 
@@ -36,13 +35,20 @@ public class Deck extends LinkedList<Card> implements IDeck{
 	@Override
 	public TreeSet<Card> pick(int number) {
 		// reuse pick()
-		return null;
+		TreeSet<Card> set = new TreeSet<>();
+		for (int i=1;i<=number;i++){
+			set.add(pick());
+		}
+		
+		return set;
 	}
 
 	@Override
 	public Hand giveHand() {
 		// A hand is a **5** card TreeSet
-		return null;
+		Hand hand = new Hand();
+		hand.addAll(pick(5));	
+		return hand;
 	}
 	
 	

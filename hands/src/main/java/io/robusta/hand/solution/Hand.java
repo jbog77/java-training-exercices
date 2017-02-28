@@ -1,15 +1,12 @@
 package io.robusta.hand.solution;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
 import java.util.TreeSet;
 
 import io.robusta.hand.Card;
-import io.robusta.hand.CardColor;
 import io.robusta.hand.HandClassifier;
 import io.robusta.hand.HandValue;
 import io.robusta.hand.interfaces.IDeck;
@@ -26,7 +23,11 @@ public class Hand extends TreeSet<Card> implements IHand{
 		// For exemple remove three cards from this hand
         // , and get 3 new ones from the Deck
         // returns the new given cards
-		return null;
+		TreeSet<Card> newCards = new TreeSet<>();
+		newCards.addAll(deck.pick(cards.size()));
+		this.remove(cards);
+		this.addAll(newCards);
+		return newCards;
 	}
 
 
