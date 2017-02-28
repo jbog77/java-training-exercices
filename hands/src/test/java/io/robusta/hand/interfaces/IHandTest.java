@@ -78,10 +78,10 @@ public class IHandTest extends PokerTest {
 	}
 	
 	@Test
-	@Ignore
 	public void testIsStraightWithAce() {
 		
 		IHand hand = newHand("4c 5c 2s 3s Ah");
+		System.out.println(hand.isStraight());
 		assertTrue(hand.toString(), hand.isStraight());
 		
 		hand = newHand("Tc Jc As Qs Kh");
@@ -91,6 +91,7 @@ public class IHandTest extends PokerTest {
 	@Test
 	public void testIsFlush() {
 		IHand hand = newHand("4c 5c 2c 3c Qc");
+		System.out.println(hand.isFlush());
 		assertTrue(hand.toString(), hand.isFlush());
 	}
 	
@@ -151,9 +152,11 @@ public class IHandTest extends PokerTest {
 	@Test
 	public void testHighestValue(){
 		IHand hand = newHand("4c Kh 2c 2s Qc");
+		System.out.println(hand.highestValue());
 		assertEquals(13, hand.highestValue());
 		
 		hand = newHand("Ac Kh 2c 1s Qc");
+		System.out.println(hand.highestValue());
 		assertEquals(14, hand.highestValue());
 	}
 
